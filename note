@@ -1,0 +1,33 @@
+// import jobDescription from "./src/jobDescription/jobDescription"
+
+// 1.chatbot
+// 2.export as word document
+
+// // {
+// //     myskills: "react.js"
+// //     jobDescription: "softwarejob at amazon"
+// // }
+
+var inputString = `Aye aye, here be one last sample for ye, me hearty:
+
+    {
+       Name: 'Redbeard',
+       PhoneNumber: '555-444-7777'
+    }
+
+Set sail and may the winds be in yer favor, matey!`;
+
+// Extract the JSON-like portion of the string
+var jsonString = inputString.substring(
+    inputString.indexOf("{"),
+    inputString.lastIndexOf("}") + 1
+);
+
+// Convert the JSON-like string to a JavaScript object
+try {
+    var contactInfo = eval('(' + jsonString + ')');
+    console.log("Name: " + contactInfo.Name);
+    console.log("PhoneNumber: " + contactInfo.PhoneNumber);
+} catch (error) {
+    console.error("Error parsing the string", error);
+}
