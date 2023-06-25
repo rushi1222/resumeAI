@@ -11,7 +11,6 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import GptInput from './gptInput/gptInput';
 function App() {
 
-
   // const [typing, setTyping] = useState(false);
   const [skillsInput, setSkillsInput] = useState(["react.js","HTML"]);
   // messages keeps track of all messages exchanged in the chat
