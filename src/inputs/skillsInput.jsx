@@ -5,10 +5,11 @@ import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import './input.css'
 
   const SkillsInput = props => {
+  const [skillList, setSkillList] = useState([]);
   const [open, setOpen] = useState(false);
 
   return (
-    <div>
+    <form>
       <div className="inputLabel">skill</div>
       <Button
         onClick={() => setOpen(!open)}
@@ -23,13 +24,13 @@ import './input.css'
       </Button>
       <Collapse in={open}>
         <div id="_skill_prompt">
-          {props.skillsInput.map((skill)=>(
-            <div className="skill">{skill}</div>
-          ))}
+          <input type="text" skil  />
           
         </div>
       </Collapse>
-    </div>
+      {open ?(<Button type="submit" className="Primary">Submit</Button>
+):(<div></div>)}
+    </form>
   );
 }
 
