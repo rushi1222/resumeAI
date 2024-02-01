@@ -6,12 +6,21 @@ const GptInput = (props)=> {
 
     const [typing, setTyping] = useState(false);
     const handleSend = async (message) => {
-        console.log("hi")
+        console.log("skillName", props.allInput[props.allInput.length-1].sName);
+        const sNames = props.allInput.map(input => input.sName).join(', ');
         message = `
-        give me one sample for the following in same format:
         {
-          Name:'',
-          PhoneNumber:''
+          Name:'Rushi',
+          PhoneNumber:'7674841222'
+          skills: ${sNames},
+        }
+        i have given u some inputs in object format right ? 
+        now write a sample job description and output should be generated in the same format as output
+       - {
+        Name:'Rushi',
+        PhoneNumber:'7674841222'
+        skills: ${sNames},
+        jobDescription: ''
         }
         `
      // Define a new message object to represent the user's message
